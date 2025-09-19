@@ -1,0 +1,35 @@
+Crypto Price Tracker
+====================
+
+Files:
+- main.py            : Command-line tracker (polling, CSV logging, threshold alerts, portfolio)
+- streamlit_app.py   : Optional Streamlit dashboard
+- requirements.txt
+
+Quick start:
+1) Create a virtualenv and install:
+   python -m venv venv
+   source venv/bin/activate  # or venv\\Scripts\\activate on Windows
+   pip install -r requirements.txt
+
+2) Run CLI:
+   python main.py --symbols BTC ETH --interval 15 --csv prices.csv
+   Example with threshold and holdings:
+   python main.py -s BTC ETH ADA -i 10 -c prices.csv -t BTC:60000 -t ETH:3000 -H BTC:0.1 -H ETH:1.2
+
+3) Run once:
+   python main.py --symbols BTC ETH --run-once
+
+4) Generate plots after stop:
+   python main.py --symbols BTC ETH -c prices.csv --plot
+
+5) Optional GUI:
+   streamlit run streamlit_app.py
+
+Telegram alerts (optional):
+- Create a bot and get token, and your chat id.
+- Run with --telegram-token <TOKEN> --telegram-chat-id <CHAT_ID>
+
+Notes:
+- Uses CoinGecko simple price API (no API key).
+- For production or high-frequency tracking consider rate limits and WebSocket sources (Binance).
