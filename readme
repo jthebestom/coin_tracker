@@ -3,7 +3,7 @@ Crypto Price Tracker
 
 Files:
 - main.py            : Command-line tracker (polling, CSV logging, threshold alerts, portfolio)
-- streamlit_app.py   : Optional Streamlit dashboard
+- streamlit_app.py   :  Streamlit dashboard
 - requirements.txt
 
 Quick start:
@@ -32,4 +32,5 @@ Telegram alerts (optional):
 
 Notes:
 - Uses CoinGecko simple price API (no API key).
-- For production or high-frequency tracking consider rate limits and WebSocket sources (Binance).
+
+
